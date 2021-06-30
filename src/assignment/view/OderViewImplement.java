@@ -21,11 +21,12 @@ public class OderViewImplement implements OderView {
            System.out.println("Oder Manager Nguyen-Mart");
            System.out.println("-------------------------");
            System.out.println("1.Add new order");
-           System.out.println("2.Search order by id.");
-           System.out.println("3.Revenue by time.");
-           System.out.println("5.Show.");
-           System.out.println("4.Exist.");
+           System.out.println("2.Show.");
+           System.out.println("3.Search order by id.");
+           System.out.println("4.Revenue by time.");
+           System.out.println("0.Exist.");
            System.out.println("-------------------------");
+           System.out.println("Please choice 0-4");
            int choice = scanner.nextInt();
            scanner.nextLine();
            switch (choice){
@@ -33,15 +34,15 @@ public class OderViewImplement implements OderView {
                    oderController.creatNewOder();
                    break;
                case 2:
-                   oderController.searchOderById();
-                   break;
-               case 3:
-                   oderController.RevenueByTime();
-                   break;
-               case 5:
                    oderController.showList();
                    break;
+               case 3:
+                   oderController.searchOderById();
+                   break;
                case 4:
+                   oderController.RevenueByTime();
+                   break;
+               case 0:
                    System.out.println("Bye bye!");
                    isMenu = false;
                    break;

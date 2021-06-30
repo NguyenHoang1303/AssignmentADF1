@@ -18,10 +18,10 @@ public class OderModelImplement implements OderModel {
         list = new ArrayList<>();
         list.add(new Oder("001","Nguyen","gà,xả,ớt,lá chanh,chanh",100000, 1));
         list.add(new Oder("002","Nguyen1","gà,xả,ớt,lá chanh,chanh",200000, 2));
-        list.add(new Oder("003","Nguyen2","gà,xả,ớt,lá chanh,chanh",300000, 3));
+        list.add(new Oder("003","Nguyen2","gà,xả,ớt,lá chanh,chanh",300000, 0));
         list.add(new Oder("004","Nguyen3","gà,xả,ớt,lá chanh,chanh",400000, 1));
         list.add(new Oder("005","Nguyen4","gà,xả,ớt,lá chanh,chanh",500000, 2));
-        list.add(new Oder("006","Nguyen5","gà,xả,ớt,lá chanh,chanh",600000, 3));
+        list.add(new Oder("006","Nguyen5","gà,xả,ớt,lá chanh,chanh",600000, 0));
         list.add(new Oder("007","Nguyen6","gà,xả,ớt,lá chanh,chanh",700000, 1));
     }
 

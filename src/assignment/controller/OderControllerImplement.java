@@ -20,6 +20,8 @@ public class OderControllerImplement implements OderController {
 
     @Override
     public void creatNewOder() {
+//        Boolean valid = true;
+//        while (valid){}
         System.out.println("Please enter ID Oder");
         String id = scanner.nextLine();
 
@@ -32,10 +34,10 @@ public class OderControllerImplement implements OderController {
         System.out.println("Please enter total price");
         int totalPrice = scanner.nextInt();
 
-        System.out.println("Please enter ID Oder");
+        System.out.println("Please enter status Oder");
         int status = scanner.nextInt();
 
-        Oder newOder =new Oder(id, userName,products, totalPrice, status);
+        Oder newOder = new Oder(id, userName,products, totalPrice, status);
 
        if ( oderModel.save(newOder)){
            System.out.println("Success");
@@ -48,7 +50,7 @@ public class OderControllerImplement implements OderController {
 
     @Override
     public void showList() {
-        System.out.printf("%5s%10s%10s | %5s%15s%15s | %5s%20s%20s | %5s%10s%10s | %5s%5s%5s | %5s%10s%5s |\n",
+        System.out.printf("%5s%10s%10s | %5s%15s%15s | %5s%20s%25s | %5s%10s%10s | %5s%15s%10s | %5s%10s%5s |\n",
                 "", "ID", "",
                 "", "Name", "",
                 "", "Products", "",
@@ -73,7 +75,7 @@ public class OderControllerImplement implements OderController {
         if(result == null){
             System.out.println("Not found!!");
         } else {
-            System.out.printf("%5s%10s%10s | %5s%15s%15s | %5s%20s%20s | %5s%10s%10s | %5s%5s%5s | %5s%10s%5s |\n",
+            System.out.printf("%5s%10s%10s | %5s%15s%15s | %5s%20s%20s | %5s%10s%10s | %5s%15s%10s | %5s%10s%5s |\n",
                     "", "ID", "",
                     "", "Name", "",
                     "", "Products", "",
@@ -110,7 +112,7 @@ public class OderControllerImplement implements OderController {
         LocalDate dateEnd = LocalDate.of(yEnd,mEnd,dEnd);
 
          List<Oder> list = oderModel.findByTime(dateStart,dateEnd);
-        System.out.printf("%5s%10s%10s | %5s%15s%15s | %5s%20s%20s | %5s%10s%10s | %5s%5s%5s | %5s%10s%5s |\n",
+        System.out.printf("%5s%10s%10s | %5s%15s%15s | %5s%20s%20s | %5s%10s%10s | %5s%15s%10s | %5s%10s%5s |\n",
                 "", "ID", "",
                 "", "Name", "",
                 "", "Products", "",

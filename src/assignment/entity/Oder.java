@@ -1,5 +1,8 @@
 package assignment.entity;
 
+import assignment.Util.Util;
+
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.Calendar;
 
@@ -16,19 +19,20 @@ public class Oder {
     private LocalDate creatAt;
     private int totalPrice;
     private int status;
-
+    private Util util;
     public Oder() {
 
     }
 
     @Override
     public String toString() {
-        return String.format("%5s%10s%10s | %5s%15s%15s | %5s%20s%18s | %5s%10s%10s | %5s%5s%5s | %5s%10s%5s |\n",
+
+        return String.format("%5s%10s%10s | %5s%15s%15s | %5s%20s%20s | %5s%10s%10s | %5s%15s%10s | %5s%10s%5s |\n",
                 "", orderId,"",
                 "", userName,"",
                 "", products,"",
-                "", totalPrice,"",
-                "", status,"",
+                "", this.handleMoney(),"",
+                "", this.handleStatus(),"",
                 "", this.getCreatAt(),""
         );
     }
@@ -47,6 +51,8 @@ public class Oder {
     }
 
     public void setOrderId(String orderId) {
+        if(orderId.length() < 0) return;
+        else
         this.orderId = orderId;
     }
 
@@ -74,6 +80,11 @@ public class Oder {
         this.creatAt = creatAt;
     }
 
+    public String handleMoney(){
+        this.util = new Util();
+        return util.moneyVND(this.totalPrice);
+    }
+
     public int getTotalPrice() {
         return totalPrice;
     }
@@ -84,6 +95,14 @@ public class Oder {
 
     public int getStatus() {
         return status;
+    }
+
+    public String handleStatus(){
+        int number = status;
+        if(number == 1) return "Chưa thanh toán";
+        if(number == 2) return "Thanh toán";
+        if (number == 0) return "Đã xóa";
+        return null;
     }
 
     public void setStatus(int status) {
