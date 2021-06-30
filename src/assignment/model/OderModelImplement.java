@@ -16,18 +16,23 @@ public class OderModelImplement implements OderModel {
 
     {
         list = new ArrayList<>();
-        list.add(new Oder("001","Nguyen","gà,xả,ớt,lá chanh,chanh",100000, 1));
-        list.add(new Oder("002","Nguyen1","gà,xả,ớt,lá chanh,chanh",200000, 2));
-        list.add(new Oder("003","Nguyen2","gà,xả,ớt,lá chanh,chanh",300000, 0));
-        list.add(new Oder("004","Nguyen3","gà,xả,ớt,lá chanh,chanh",400000, 1));
-        list.add(new Oder("005","Nguyen4","gà,xả,ớt,lá chanh,chanh",500000, 2));
-        list.add(new Oder("006","Nguyen5","gà,xả,ớt,lá chanh,chanh",600000, 0));
-        list.add(new Oder("007","Nguyen6","gà,xả,ớt,lá chanh,chanh",700000, 1));
-        list.add(new Oder("007","Nguyen8","gà,xả,ớt,lá chanh,chanh",LocalDate.of(2021,05,10),500000, 1));
-        list.add(new Oder("007","Nguyen8","gà,xả,ớt,lá chanh,chanh",LocalDate.of(2021,06,11),600000, 1));
-        list.add(new Oder("007","Nguyen8","gà,xả,ớt,lá chanh,chanh",LocalDate.of(2021,06,12),700000, 1));
-        list.add(new Oder("007","Nguyen8","gà,xả,ớt,lá chanh,chanh",LocalDate.of(2021,06,13),800000, 1));
-        list.add(new Oder("007","Nguyen8","gà,xả,ớt,lá chanh,chanh",LocalDate.of(2021,06,14),900000, 1));
+        list.add(new Oder("001", "Nguyen9", "gà,xả,ớt,lá chanh,", LocalDate.of(2021, 05, 1), 100000, 0));
+        list.add(new Oder("002", "Nguyen9", "gà,xả,ớt,lá chanh,", LocalDate.of(2021, 05, 2), 200000, 1));
+        list.add(new Oder("003", "Nguyen9", "gà,xả,ớt,lá chanh,", LocalDate.of(2021, 05, 3), 300000, 2));
+        list.add(new Oder("004", "Nguyen9", "gà,xả,ớt,lá chanh,", LocalDate.of(2021, 05, 4), 400000, 1));
+        list.add(new Oder("005", "Nguyen9", "gà,xả,ớt,lá chanh,", LocalDate.of(2021, 05, 5), 500000, 0));
+        list.add(new Oder("006", "Nguyen9", "gà,xả,ớt,lá chanh,", LocalDate.of(2021, 05, 6), 600000, 2));
+        list.add(new Oder("007", "Nguyen9", "gà,xả,ớt,lá chanh,", LocalDate.of(2021, 05, 7), 700000, 1));
+        list.add(new Oder("008", "Nguyen9", "gà,xả,ớt,lá chanh,", LocalDate.of(2021, 05, 8), 800000, 2));
+        list.add(new Oder("009", "Nguyen9", "gà,xả,ớt,lá chanh,", LocalDate.of(2021, 05, 9), 900000, 2));
+        list.add(new Oder("010", "Nguyen9", "gà,xả,ớt,lá chanh,", LocalDate.of(2021, 05, 10), 150000, 1));
+        list.add(new Oder("011", "Nguyen10", "gà,xả,ớt,lá chanh,", LocalDate.of(2021, 06, 11), 250000, 2));
+        list.add(new Oder("012", "Nguyen11", "gà,xả,ớt,lá chanh,", LocalDate.of(2021, 06, 12), 350000, 0));
+        list.add(new Oder("013", "Nguyen12", "gà,xả,ớt,lá chanh,", LocalDate.of(2021, 06, 13), 450000, 2));
+        list.add(new Oder("014", "Nguyen13", "gà,xả,ớt,lá chanh,", LocalDate.of(2021, 06, 14), 550000, 0));
+        list.add(new Oder("015", "Nguyen14", "gà,xả,ớt,lá chanh,", LocalDate.of(2021, 06, 15), 650000, 2));
+        list.add(new Oder("016", "Nguyen15", "gà,xả,ớt,lá chanh,", LocalDate.of(2021, 06, 16), 750000, 1));
+        list.add(new Oder("017", "Nguyen16", "gà,xả,ớt,lá chanh,", LocalDate.of(2021, 06, 17), 850000, 1));
     }
 
     @Override
@@ -54,16 +59,15 @@ public class OderModelImplement implements OderModel {
     @Override
     public List<Oder> findByTime(LocalDate startTime, LocalDate endTime) {
 
-        List<Oder> newOder = new ArrayList<>();
-        for (Oder oder: list
-             ) {
-            if(startTime.compareTo(oder.getCreatAt()) <= 0 && endTime.compareTo(oder.getCreatAt()) >= 0){
-                if (oder.getStatus() == 2){
-                    newOder.add(oder);
-                }
-
+        List<Oder> newList = new ArrayList<>();
+        for (Oder oder : list
+        ) {
+            if (startTime.compareTo(oder.getCreatAt()) <= 0
+                    && endTime.compareTo(oder.getCreatAt()) >= 0 && oder.getStatus() == 2) {
+                newList.add(oder);
             }
         }
-        return newOder;
+        if (newList.size() > 0) return newList;
+        return null;
     }
 }

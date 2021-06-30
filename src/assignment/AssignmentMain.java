@@ -15,6 +15,12 @@ public class AssignmentMain {
     public static void main(String[] args) {
         OderViewImplement oder = new OderViewImplement();
         oder.Menu();
+//    Scanner sc = new Scanner(System.in);
+//    String xxx = "2021-06-30";
+//    LocalDate date = LocalDate.parse(xxx);
+//        System.out.println("date: "+ date);
+//    LocalDate date1 = LocalDate.of(2021,06,30);
+//        System.out.println("Compare "+date.compareTo(date1));
 
     }
 }

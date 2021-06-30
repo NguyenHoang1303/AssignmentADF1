@@ -9,6 +9,6 @@ public class Util {
     public static String moneyVND(int money){
         Locale formatMoney = new Locale("nv","VN");//Định dạng locale việt nam
         NumberFormat nf = NumberFormat.getInstance(formatMoney);
-        return nf.format(money) + " VNĐ";
+        return nf.format(money);
     }
 }
