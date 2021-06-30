@@ -37,6 +37,15 @@ public class Oder {
         );
     }
 
+    public Oder(String orderId, String userName, String products, LocalDate creatAt, int totalPrice, int status) {
+        this.orderId = orderId;
+        this.userName = userName;
+        this.products = products;
+        this.creatAt = creatAt;
+        this.totalPrice = totalPrice;
+        this.status = status;
+    }
+
     public Oder(String orderId, String userName, String products, int totalPrice, int status) {
         this.orderId = orderId;
         this.userName = userName;
