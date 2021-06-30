@@ -9,11 +9,10 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class AssignmentMain {
+    public String name;
     public static void main(String[] args) {
         OderViewImplement oder = new OderViewImplement();
         oder.Menu();
-//        Oder newOder = new Oder("001","nguyen","Gà",100000,1);
-//        System.out.println(newOder.getCreatAt());
 
     }
 }

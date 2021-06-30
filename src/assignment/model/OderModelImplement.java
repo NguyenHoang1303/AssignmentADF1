@@ -23,6 +23,11 @@ public class OderModelImplement implements OderModel {
         list.add(new Oder("005","Nguyen4","gà,xả,ớt,lá chanh,chanh",500000, 2));
         list.add(new Oder("006","Nguyen5","gà,xả,ớt,lá chanh,chanh",600000, 3));
         list.add(new Oder("007","Nguyen6","gà,xả,ớt,lá chanh,chanh",700000, 1));
+        list.add(new Oder("007","Nguyen8","gà,xả,ớt,lá chanh,chanh",LocalDate.of(2021,05,10),500000, 1));
+        list.add(new Oder("007","Nguyen8","gà,xả,ớt,lá chanh,chanh",LocalDate.of(2021,06,11),600000, 1));
+        list.add(new Oder("007","Nguyen8","gà,xả,ớt,lá chanh,chanh",LocalDate.of(2021,06,12),700000, 1));
+        list.add(new Oder("007","Nguyen8","gà,xả,ớt,lá chanh,chanh",LocalDate.of(2021,06,13),800000, 1));
+        list.add(new Oder("007","Nguyen8","gà,xả,ớt,lá chanh,chanh",LocalDate.of(2021,06,14),900000, 1));
     }
 
     @Override
@@ -48,11 +53,15 @@ public class OderModelImplement implements OderModel {
 
     @Override
     public List<Oder> findByTime(LocalDate startTime, LocalDate endTime) {
+
         List<Oder> newOder = new ArrayList<>();
         for (Oder oder: list
              ) {
             if(startTime.compareTo(oder.getCreatAt()) <= 0 && endTime.compareTo(oder.getCreatAt()) >= 0){
-                newOder.add(oder);
+                if (oder.getStatus() == 2){
+                    newOder.add(oder);
+                }
+
             }
         }
         return newOder;
